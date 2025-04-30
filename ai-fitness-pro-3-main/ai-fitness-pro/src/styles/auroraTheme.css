@@ -1,0 +1,156 @@
+/* Aurora Theme Base Styles */
+.aurora-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(240, 247, 255, 0.97) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(135, 206, 235, 0.15),   /* Sky Blue */
+    rgba(173, 216, 230, 0.15),   /* Light Blue */
+    rgba(176, 196, 222, 0.15),   /* Light Steel Blue */
+    rgba(147, 197, 253, 0.15),   /* Blue */
+    rgba(144, 238, 144, 0.15),   /* Light Green */
+    rgba(221, 160, 221, 0.15)    /* Plum */
+  );
+  filter: blur(30px);
+  animation: auroraFlow 20s ease infinite;
+  z-index: 0;
+}
+
+.aurora-bg::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(176, 224, 230, 0.1),    /* Powder Blue */
+    rgba(175, 238, 238, 0.1),    /* Pale Turquoise */
+    rgba(162, 197, 255, 0.1),    /* Light Sky Blue */
+    rgba(230, 230, 250, 0.1)     /* Lavender */
+  );
+  filter: blur(40px);
+  animation: auroraFlow 15s ease infinite reverse;
+  z-index: 0;
+}
+
+.aurora-button {
+  background: linear-gradient(
+    135deg,
+    rgba(100, 181, 246, 0.9),    /* Bright Blue */
+    rgba(144, 202, 249, 0.9)     /* Light Blue */
+  );
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.aurora-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(100, 181, 246, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(66, 165, 245, 0.9),     /* Darker Blue */
+    rgba(100, 181, 246, 0.9)     /* Bright Blue */
+  );
+}
+
+.aurora-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+.aurora-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(100, 181, 246, 0.15),
+    0 2px 8px rgba(144, 202, 249, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.aurora-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmerCard 8s infinite linear;
+}
+
+.aurora-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 40px rgba(100, 181, 246, 0.25),
+    0 4px 12px rgba(144, 202, 249, 0.15);
+}
+
+@keyframes auroraFlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+@keyframes shimmerCard {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+  }
+} 

@@ -1,0 +1,14 @@
+/* Add these styles if you're not using Tailwind */
+.workout-plan pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+
+.workout-section {
+  margin-bottom: 2rem;
+}
+
+.exercise-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+} 

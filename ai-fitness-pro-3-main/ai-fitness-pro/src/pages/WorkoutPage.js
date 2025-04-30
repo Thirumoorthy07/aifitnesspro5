@@ -1,0 +1,1 @@
+import generateWorkoutPlan from '../components/WorkoutPlanGenerator'; 
